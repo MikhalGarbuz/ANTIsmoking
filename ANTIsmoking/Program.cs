@@ -46,50 +46,21 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
         Message sentMessage = await botClient.SendTextMessageAsync(chatId,"Choose a response", replyMarkup: inlineKeyboard);
     }
 
-    var callbackQuery = update.CallbackQuery;
-    if (callbackQuery.Data== "11")
-    {
-        Message sentMessage = await botClient.SendTextMessageAsync(chatId, "ден лох");
-
-    }
 
     if (message.Text is "точки продажу")
     {
-        InlineKeyboardMarkup inlineKeyboard = new(new[]
-{
-    new []
-    {
-        InlineKeyboardButton.WithCallbackData(text: "1.1", callbackData: "11"),
-        InlineKeyboardButton.WithCallbackData(text: "1.2", callbackData: "12"),
-    },
-    new []
-    {
-        InlineKeyboardButton.WithCallbackData(text: "2.1", callbackData: "21"),
-        InlineKeyboardButton.WithCallbackData(text: "2.2", callbackData: "22"),
-    },
-});
-        Message sentMessage = await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: inlineKeyboard);
+        ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
+        {
+            new KeyboardButton[] { "НУЛП гуртожиток 8", "НУЛП гуртожиток 11" },
+            new KeyboardButton[] { "НУЛП гуртожиток 14", "Львів вул. Бойчука 5" }
+
+        })
+        {
+            ResizeKeyboard = true
+        };
+
+        Message sentMessage = await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: replyKeyboardMarkup);
     }
-
-    //if ()
-    //{
-    //    InlineKeyboardMarkup inlineKeyboard = new(new[]
-    //    {
-    //        new []
-    //        {
-    //            InlineKeyboardButton.WithCallbackData(text: "НУЛП гуртожиток 8", callbackData: "8"),
-    //            InlineKeyboardButton.WithCallbackData(text: "НУЛП гуртожиток 11", callbackData: "11"),
-    //        },
-    //        new []
-    //        {
-    //            InlineKeyboardButton.WithCallbackData(text: "НУЛП гуртожиток 14", callbackData: "14"),
-    //            InlineKeyboardButton.WithCallbackData(text: "Львів вул. Бойчука 5", callbackData: "0"),
-    //        }
-    //    });
-
-    //    Message sentMessage = await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: inlineKeyboard);
-        
-    //}
 }
 
 
@@ -107,4 +78,36 @@ Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, 
     return Task.CompletedTask;
 }
 
-    
+
+//if ()
+//{
+//    InlineKeyboardMarkup inlineKeyboard = new(new[]
+//    {
+//        new []
+//        {
+//            InlineKeyboardButton.WithCallbackData(text: "НУЛП гуртожиток 8", callbackData: "8"),
+//            InlineKeyboardButton.WithCallbackData(text: "НУЛП гуртожиток 11", callbackData: "11"),
+//        },
+//        new []
+//        {
+//            Inli  neKeyboardButton.WithCallbackData(text: "НУЛП гуртожиток 14", callbackData: "14"),
+//            InlineKeyboardButton.WithCallbackData(text: "Львів вул. Бойчука 5", callbackData: "0"),
+//        }
+//    });
+
+//    Message sentMessage = await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: inlineKeyboard);
+
+//}
+//InlineKeyboardMarkup inlineKeyboard = new(new[]
+//{
+//    new []
+//    {
+//        InlineKeyboardButton.WithCallbackData(text: "1.1", callbackData: "11"),
+//        InlineKeyboardButton.WithCallbackData(text: "1.2", callbackData: "12"),
+//    },
+//    new []
+//    {
+//        InlineKeyboardButton.WithCallbackData(text: "2.1", callbackData: "21"),
+//        InlineKeyboardButton.WithCallbackData(text: "2.2", callbackData: "22"),
+//    },
+//});
