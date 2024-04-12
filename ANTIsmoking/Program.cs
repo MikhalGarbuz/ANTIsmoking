@@ -62,7 +62,7 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
         };
 
         Message sentMessage = await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: replyKeyboardMarkup);
-    }
+    }////////////
 }
 
 
