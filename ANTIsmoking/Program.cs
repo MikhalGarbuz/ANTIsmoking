@@ -1,4 +1,5 @@
-﻿using Telegram.Bot;
+﻿using ANTIsmoking.Data;
+using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
@@ -6,6 +7,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using MySql.Data.MySqlClient;
+
 
 var botClient = new TelegramBotClient("6436860979:AAHbR6jwJxZGtqXhbBh43VAlVTTzqoUppH8");
 
