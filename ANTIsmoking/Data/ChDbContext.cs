@@ -19,6 +19,39 @@ namespace ANTIsmoking.Data
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
+                    string selectQuery = $"SELECT name, {cumpNum} FROM chasertab";
+
+                    using (MySqlCommand command1 = new MySqlCommand(selectQuery, connection))
+                    {
+                        using (MySqlDataReader reader = command1.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    outputString += reader[i].ToString() + " | ";
+                                }
+                                outputString += Environment.NewLine;
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return outputString;
+        }
+        public string AdminCheck(int cumpNum)
+        {
+            string outputString = "";
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
                     string selectQuery = $"SELECT id, name, {cumpNum} FROM chasertab";
 
                     using (MySqlCommand command1 = new MySqlCommand(selectQuery, connection))
