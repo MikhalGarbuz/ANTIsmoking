@@ -29,7 +29,7 @@ namespace ANTIsmoking.Data
                             {
                                 for (int i = 0; i < reader.FieldCount; i++)
                                 {
-                                    outputString += reader[i].ToString() + " | ";
+                                    outputString += reader[i].ToString() + " - ";
                                 }
                                 outputString += Environment.NewLine;
 
