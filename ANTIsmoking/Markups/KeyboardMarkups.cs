@@ -11,20 +11,20 @@ namespace ANTIsmoking.Markups
 {
     public class KeyboardMarkups
     {
-        public async Task CumpusMurkup(ITelegramBotClient botClient, Message message)
+        public async Task CumpusMurkup(ITelegramBotClient botClient, long chatId)
         {
             ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
         {
                     new KeyboardButton[] { "НУЛП гуртожиток 3", "НУЛП гуртожиток 8", "НУЛП гуртожиток 11" },
-                    new KeyboardButton[] { "НУЛП гуртожиток 12", "НУЛП гуртожиток 14", "" }
+                    new KeyboardButton[] { "НУЛП гуртожиток 12", "НУЛП гуртожиток 14", "Головна" }
                 })
             {
                 ResizeKeyboard = true
             };
 
-            await botClient.SendTextMessageAsync(message.MessageId, "Виберіть зручну для вас локацію:", replyMarkup: replyKeyboardMarkup);
+            await botClient.SendTextMessageAsync(chatId, "Виберіть зручну для вас локацію:", replyMarkup: replyKeyboardMarkup);
         }
-        public async Task StartMurkup(ITelegramBotClient botClient, Message message)
+        public async Task StartMurkup(ITelegramBotClient botClient, long chatId)
         {
             ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
             {
@@ -34,7 +34,7 @@ namespace ANTIsmoking.Markups
                 ResizeKeyboard = true
             };
 
-            await botClient.SendTextMessageAsync(message.MessageId, "Choose a response", replyMarkup: replyKeyboardMarkup);
+            await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: replyKeyboardMarkup);
         }
     }
 }

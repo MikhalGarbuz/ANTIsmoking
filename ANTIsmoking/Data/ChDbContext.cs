@@ -19,7 +19,7 @@ namespace ANTIsmoking.Data
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string selectQuery = $"SELECT name, {cumpNum} FROM chasertab";
+                    string selectQuery = $"SELECT name, cum{cumpNum} FROM chasertab";
 
                     using (MySqlCommand command1 = new MySqlCommand(selectQuery, connection))
                     {
@@ -52,7 +52,7 @@ namespace ANTIsmoking.Data
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string selectQuery = $"SELECT id, name, {cumpNum} FROM chasertab";
+                    string selectQuery = $"SELECT id, name, cum{cumpNum} FROM chasertab";
 
                     using (MySqlCommand command1 = new MySqlCommand(selectQuery, connection))
                     {
@@ -116,7 +116,7 @@ namespace ANTIsmoking.Data
                 {
                     connection.Open();
 
-                    string decrementQuery = $"UPDATE chasertab SET {cumpNum} = {cumpNum} - @DecrementValue WHERE id={id}";
+                    string decrementQuery = $"UPDATE chasertab SET cum{cumpNum} = cum{cumpNum} - @DecrementValue WHERE id={id}";
 
                     using (MySqlCommand command = new MySqlCommand(decrementQuery, connection))
                     {
@@ -141,7 +141,7 @@ namespace ANTIsmoking.Data
                 {
                     connection.Open();
 
-                    string incrementQuery = $"UPDATE chasertab SET {cumpNum} = {cumpNum} + @IncrementValue WHERE id={id}";
+                    string incrementQuery = $"UPDATE chasertab SET cum{cumpNum} = cum{cumpNum} + @IncrementValue WHERE id={id}";
 
                     using (MySqlCommand command = new MySqlCommand(incrementQuery, connection))
                     {
@@ -166,7 +166,7 @@ namespace ANTIsmoking.Data
                 {
                     connection.Open();
 
-                    string insertQuery = "INSERT INTO chasertab (id, name, 3, 8, 11, 12, 14) VALUES (@id, @name, @cum3, @cum8, @cum11, @cum12, @cum14)";
+                    string insertQuery = "INSERT INTO chasertab (id, name, cum3, cum8, cum11, cum12, cum14) VALUES (@id, @name, @cum3, @cum8, @cum11, @cum12, @cum14)";
 
                     foreach (var myObject in chaserList)
                     {

@@ -40,10 +40,10 @@ namespace ANTIsmoking.Options
                     await botClient.SendTextMessageAsync(chatId, chDbContext.SelectComm(14));
                     break;
                 case "Переглянути наявність":
-                    kb.CumpusMurkup(botClient, message);
+                    kb.CumpusMurkup(botClient, chatId);
                     break;
                 case "Головна":
-                    kb.StartMurkup(botClient, message);
+                    kb.StartMurkup(botClient, chatId);
                     break;
                 case "choksudo":
                 default:
@@ -51,9 +51,9 @@ namespace ANTIsmoking.Options
             }
         }
         
-        public async Task AdminSwitch(ITelegramBotClient botClient, Update update)
-        {
+        //public async Task AdminSwitch(ITelegramBotClient botClient, Update update)
+        //{
 
-        }
+        //}
     }
 }
