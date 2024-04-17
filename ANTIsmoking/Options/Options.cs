@@ -25,19 +25,19 @@ namespace ANTIsmoking.Options
             var chatId = message.Chat.Id;
             switch (message.Text)
             {
-                case "НУЛП гуртожиток 3":
+                case "Гурт 3":
                     await botClient.SendTextMessageAsync(chatId, chDbContext.SelectComm(3));
                     break;
-                case "НУЛП гуртожиток 8":
+                case "Гурт 8":
                     await botClient.SendTextMessageAsync(chatId, chDbContext.SelectComm(8));
                     break;
-                case "НУЛП гуртожиток 11":
+                case "Гурт 11":
                     await botClient.SendTextMessageAsync(chatId, chDbContext.SelectComm(11));
                     break;
-                case "НУЛП гуртожиток 12":
+                case "Гурт 12":
                     await botClient.SendTextMessageAsync(chatId, chDbContext.SelectComm(12));
                     break;
-                case "НУЛП гуртожиток 14":
+                case "Гурт 14":
                     await botClient.SendTextMessageAsync(chatId, chDbContext.SelectComm(14));
                     break;
                 case "Переглянути наявність":
@@ -53,6 +53,8 @@ namespace ANTIsmoking.Options
                 case "sudochok":
                     chDbContext.DeleteComm();
                     break;
+                //case "hui":
+
 
                 default:
                     break;

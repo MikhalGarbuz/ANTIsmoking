@@ -29,8 +29,9 @@ namespace ANTIsmoking.Data
                             {
                                 for (int i = 0; i < reader.FieldCount; i++)
                                 {
-                                    outputString += reader[i].ToString() + " ";
+                                    outputString +=reader[i].ToString() + " ";
                                 }
+                                outputString += "Шт";
                                 outputString += Environment.NewLine;
 
                             }
@@ -174,11 +175,11 @@ namespace ANTIsmoking.Data
                         {
                             command.Parameters.AddWithValue("@id", myObject.id);
                             command.Parameters.AddWithValue("@name", myObject.name);
-                            command.Parameters.AddWithValue("@cum1", myObject.cum3);
-                            command.Parameters.AddWithValue("@cum1", myObject.cum8);
-                            command.Parameters.AddWithValue("@cum2", myObject.cum11);
-                            command.Parameters.AddWithValue("@cum1", myObject.cum12);
-                            command.Parameters.AddWithValue("@cum3", myObject.cum14);
+                            command.Parameters.AddWithValue("@cum3", myObject.cum3);
+                            command.Parameters.AddWithValue("@cum8", myObject.cum8);
+                            command.Parameters.AddWithValue("@cum11", myObject.cum11);
+                            command.Parameters.AddWithValue("@cum12", myObject.cum12);
+                            command.Parameters.AddWithValue("@cum14", myObject.cum14);
                             int rowsAffected = command.ExecuteNonQuery();
 
                             Console.WriteLine($"{rowsAffected} row(s) inserted.");

@@ -15,8 +15,8 @@ namespace ANTIsmoking.Markups
         {
             ReplyKeyboardMarkup replyKeyboardMarkup = new(new[]
         {
-                    new KeyboardButton[] { "НУЛП гуртожиток 3", "НУЛП гуртожиток 8", "НУЛП гуртожиток 11" },
-                    new KeyboardButton[] { "НУЛП гуртожиток 12", "НУЛП гуртожиток 14", "Головна" }
+                    new KeyboardButton[] { "Гурт 3", "Гурт 8", "Гурт 11" },
+                    new KeyboardButton[] { "Гурт 12", "Гурт 14", "Головна" }
                 })
             {
                 ResizeKeyboard = true
