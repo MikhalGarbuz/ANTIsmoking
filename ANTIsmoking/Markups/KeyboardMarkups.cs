@@ -34,7 +34,7 @@ namespace ANTIsmoking.Markups
                 ResizeKeyboard = true
             };
 
-            await botClient.SendTextMessageAsync(chatId, "Choose a response", replyMarkup: replyKeyboardMarkup);
+            await botClient.SendTextMessageAsync(chatId, "Вітаю мій любий шанувальник куріння!!!", replyMarkup: replyKeyboardMarkup);
         }
     }
 }

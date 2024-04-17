@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ANTIsmoking.Data;
 using ANTIsmoking.Markups;
+using ANTIsmoking.Scan;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
@@ -46,6 +47,13 @@ namespace ANTIsmoking.Options
                     kb.StartMurkup(botClient, chatId);
                     break;
                 case "choksudo":
+                    ScanToDb sc =new ScanToDb();
+                    sc.TxtToDb();
+                    break;
+                case "sudochok":
+                    chDbContext.DeleteComm();
+                    break;
+
                 default:
                     break;
             }

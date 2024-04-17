@@ -8,12 +8,17 @@ namespace ANTIsmoking.Models
 {
     public class Chaser
     {
-        public int id { get; set; }
+        private static int nextId = 1;
+        public int id { get;private set; }
         public string name { get; set; }
         public int cum3 { get; set; }
         public int cum8 { get; set; }
         public int cum11 { get; set; }
         public int cum12 { get; set; }
         public int cum14 { get; set; }
+        public Chaser()
+        {
+            id = nextId++;
+        }
     }
 }
