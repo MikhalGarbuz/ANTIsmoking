@@ -11,18 +11,27 @@ using Telegram.Bot.Types;
 
 namespace ANTIsmoking.Options
 {
-    public class Options
+    public class UserComands
     {
         public Update update { get; set; }  
         public ITelegramBotClient botClient { get; set; }
 
+        Message message;
+
+        long chatId;
+
         ChDbContext chDbContext = new ChDbContext();
 
         KeyboardMarkups kb = new KeyboardMarkups();
-        public async Task DataSwitch()
+        public UserComands(Update _update, ITelegramBotClient _botClient)
         {
-            var message = update.Message;
-            var chatId = message.Chat.Id;
+            update = _update;
+            botClient = _botClient;
+            message = update.Message;
+            chatId = message.Chat.Id;
+        }
+        public async Task ByUser()
+        {
             switch (message.Text)
             {
                 case "Гурт 3":
@@ -60,10 +69,15 @@ namespace ANTIsmoking.Options
                     break;
             }
         }
-        
-        //public async Task AdminSwitch(ITelegramBotClient botClient, Update update)
-        //{
 
-        //}
+        public async Task ByAdmin(ITelegramBotClient botClient, Update update)
+        {
+            switch (message.Text)
+            {
+                case " "
+                default:
+                    break;
+            }
+        }
     }
 }
